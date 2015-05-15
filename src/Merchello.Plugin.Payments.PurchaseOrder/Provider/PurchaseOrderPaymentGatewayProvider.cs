@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Merchello.Core.Gateways;
-using Merchello.Core.Gateways.Payment;
-using Merchello.Core.Models;
-using Merchello.Core.Services;
-using Umbraco.Core.Cache;
-using Umbraco.Core.Logging;
-
-namespace Merchello.Plugin.Payments.PurchaseOrder.Provider
+﻿namespace Merchello.Plugin.Payments.PurchaseOrder.Provider
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Merchello.Core.Gateways;
+    using Merchello.Core.Gateways.Payment;
+    using Merchello.Core.Models;
+    using Merchello.Core.Services;
+
+    using Umbraco.Core.Cache;
+    using Umbraco.Core.Logging;
+
     /// <summary>
     /// The authorize net payment gateway provider.
     /// </summary>
@@ -77,6 +79,7 @@ namespace Merchello.Plugin.Payments.PurchaseOrder.Provider
         {
             // assert gateway resource is still available
             var available = ListResourcesOffered().FirstOrDefault(x => x.ServiceCode == gatewayResource.ServiceCode);
+            
             if(available == null) throw new InvalidOperationException("GatewayResource has already been assigned");
 
             var attempt = GatewayProviderService.CreatePaymentMethodWithKey(GatewayProviderSettings.Key, name, description, available.ServiceCode);            

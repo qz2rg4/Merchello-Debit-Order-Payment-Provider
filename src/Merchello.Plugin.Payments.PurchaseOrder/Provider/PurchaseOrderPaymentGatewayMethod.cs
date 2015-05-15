@@ -226,8 +226,10 @@
                     payment.Key,
                     invoice.Key,
                     AppliedPaymentType.Debit,
-                    payment.ExtendedData.GetValue(Constants.ExtendedDataKeys.AuthorizationTransactionResult) +
-                    (transactionMode == TransactionMode.AuthorizeAndCapture ? string.Empty : " to show record of Authorization"),
+                    payment.ExtendedData.GetValue(Constants.ExtendedDataKeys.AuthorizationTransactionResult)
+                    + (transactionMode == TransactionMode.AuthorizeAndCapture
+                           ? string.Empty
+                           : " to show record of Authorization"),
                     transactionMode == TransactionMode.AuthorizeAndCapture ? invoice.Total : 0);
             }
 

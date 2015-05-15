@@ -14,8 +14,8 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyVersion("2.0.0")]
-[assembly: AssemblyFileVersion("2.0.409.35461")]
-[assembly: AssemblyInformationalVersion("2.0.0.0")]
+[assembly: AssemblyVersion("1.8.3")]
+[assembly: AssemblyFileVersion("1.8.409.36168")]
+[assembly: AssemblyInformationalVersion("1.8.3.0")]
 
 
