@@ -1,0 +1,23 @@
+﻿@inherits UmbracoViewPage<CheckoutConfirmationForm>
+@using System.Web.Mvc.Html
+@using Merchello.Plugin.Payment.PurchaseOrder.Bazaar.Controllers
+@using Umbraco.Web.Mvc
+@using Merchello.Bazaar.Models
+@using Umbraco.Web
+
+@using(Html.BeginUmbracoForm<PurchaseOrderController>("ConfirmSale", null, new { @id = "ConfirmSale" }))
+{
+    @Html.HiddenFor(x => x.ShipMethodKey, new { @class = "selected-shipmethod-key" })
+    @Html.HiddenFor(x => x.PaymentMethodKey, new { @class = "selected-paymentmethod-key" })
+    @Html.HiddenFor(x => x.CustomerToken, new { @id = "customer-token" })
+    @Html.HiddenFor(x => x.ReceiptPageId)
+    <div class="control-group">
+        <label class="control-label">Purchase Order Number</label>
+        <div class="controls">
+            <input class="span12 " id="purchaseOrderNumber" name="purchaseOrderNumber" value="" placeholder="Purchase order Number">
+        </div>
+    </div>
+    <div class="control-group">
+        <button type="submit" class="btn btn-primary">Confirm Sale</button>
+    </div>
+}

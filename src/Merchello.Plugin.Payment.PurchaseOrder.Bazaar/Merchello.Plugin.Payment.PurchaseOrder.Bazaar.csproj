@@ -148,6 +148,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -231,10 +232,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Plugins\Merchello.PurchaseOrder\Views\" />
+    <ProjectReference Include="..\Merchello.Plugin.Payments.PurchaseOrder\Merchello.Plugin.Payments.PurchaseOrder.csproj">
+      <Project>{2aaa2692-630b-498e-9f17-53246598fd32}</Project>
+      <Name>Merchello.Plugin.Payments.PurchaseOrder</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="App_Plugins\Merchello.PurchaseOrder\Views\Partials\PurchaseOrderPaymentMethodForm.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
