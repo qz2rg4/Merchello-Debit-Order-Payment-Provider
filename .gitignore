@@ -16,3 +16,8 @@ Cached/
 !**/App_Data/[Pp]ackages/
 !**/[Uu]mbraco/[Dd]eveloper/[Pp]ackages
 *.suo
+src/Merchello.Plugin.Payment.PurchaseOrder.Bazaar/bin/
+src/packages/
+src/Merchello.Plugin.Payments.PurchaseOrder/bin/
+src/Merchello.Plugin.Payment.PurchaseOrder.Bazaar/obj/
+src/Merchello.Plugin.Payments.PurchaseOrder/obj/
