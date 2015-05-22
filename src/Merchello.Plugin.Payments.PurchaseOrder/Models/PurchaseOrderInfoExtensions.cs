@@ -7,6 +7,8 @@
     /// </summary>
     public static class PurchaseOrderInfoExtensions
     {
+        private const string PurchaseOrderKey = "purchaseOrderNumber";
+
         /// <summary>
         /// Maps the <see cref="PurchaseOrderFormData"/> to a <see cref="ProcessorArgumentCollection"/>
         /// </summary>
@@ -39,6 +41,26 @@
             {
                 PurchaseOrderNumber = args.ArgValue("purchaseOrderNumber")
             };
+        }
+
+        /// <summary>
+        /// The set purchase order number.
+        /// </summary>
+        /// <param name="args">
+        /// The <see cref="ProcessorArgumentCollection"/>
+        /// </param>
+        /// <param name="purchaseOrderNumber">
+        /// The Purchase Order Number.
+        /// </param>
+        public static void SetPurchaseOrderNumber(this ProcessorArgumentCollection args, string purchaseOrderNumber)
+        {
+            if (args.ContainsKey(PurchaseOrderKey))
+            {
+                args[PurchaseOrderKey] = purchaseOrderNumber;
+                return;
+            }
+
+            args.Add(PurchaseOrderKey, purchaseOrderNumber);
         }
 
         /// <summary>

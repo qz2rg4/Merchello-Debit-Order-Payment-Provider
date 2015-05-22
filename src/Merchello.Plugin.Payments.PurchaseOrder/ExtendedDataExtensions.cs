@@ -1,9 +1,10 @@
-﻿using Merchello.Core.Models;
-using Merchello.Plugin.Payments.PurchaseOrder.Models;
-using Newtonsoft.Json;
-
-namespace Merchello.Plugin.Payments.PurchaseOrder
+﻿namespace Merchello.Plugin.Payments.PurchaseOrder
 {
+    using Merchello.Core.Models;
+    using Merchello.Plugin.Payments.PurchaseOrder.Models;
+
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Extended data utiltity extensions
     /// </summary>
