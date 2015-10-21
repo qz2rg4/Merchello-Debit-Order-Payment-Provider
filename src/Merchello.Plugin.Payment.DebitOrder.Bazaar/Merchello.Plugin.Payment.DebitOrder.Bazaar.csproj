@@ -228,18 +228,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\PurchaseOrderController.cs" />
+    <Compile Include="Controllers\DebitOrderController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Merchello.Plugin.Payments.PurchaseOrder\Merchello.Plugin.Payments.PurchaseOrder.csproj">
+    <ProjectReference Include="..\Merchello.Plugin.Payments.DebitOrder\Merchello.Plugin.Payments.DebitOrder.csproj">
       <Project>{2aaa2692-630b-498e-9f17-53246598fd32}</Project>
-      <Name>Merchello.Plugin.Payments.PurchaseOrder</Name>
+      <Name>Merchello.Plugin.Payments.DebitOrder</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Plugins\Merchello.PurchaseOrder\Views\Partials\PurchaseOrderPaymentMethodForm.cshtml" />
+    <None Include="App_Plugins\Merchello.DebitOrder\Views\Partials\DebitOrderPaymentMethodForm.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

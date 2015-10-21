@@ -1,4 +1,4 @@
-﻿namespace Merchello.Plugin.Payment.PurchaseOrder.Bazaar.Controllers
+﻿namespace Merchello.Plugin.Payment.DebitOrder.Bazaar.Controllers
 {
     using System;
     using System.IO;
@@ -10,7 +10,7 @@
     using Merchello.Core.Gateways.Payment;
     using Merchello.Core.Models;
     using Merchello.Core.Sales;
-    using Merchello.Plugin.Payments.PurchaseOrder.Models;
+    using Merchello.Plugin.Payments.DebitOrder.Models;
 
     using Umbraco.Core;
     using Umbraco.Web.Mvc;
@@ -18,14 +18,14 @@
     /// <summary>
     /// A controller to render and capture payment for a purchase order in a Merchello.Bazaar starter.
     /// </summary>
-    [GatewayMethodUi("PurchaseOrder.PurchaseOrder")]
+    [GatewayMethodUi("DebitOrder.DebitOrder")]
     [PluginController("Bazaar")]
-    public class PurchaseOrderController : BazaarPaymentMethodFormControllerBase
+    public class DebitOrderController : BazaarPaymentMethodFormControllerBase
     {
         /// <summary>
         /// The view path.
         /// </summary>
-        private const string ViewPath = "~/App_Plugins/Merchello.PurchaseOrder/Views/Partials/";
+        private const string ViewPath = "~/App_Plugins/Merchello.DebitOrder/Views/Partials/";
 
         /// <summary>
         /// Responsible for rendering the purchase order form in the Bazaar.
@@ -39,7 +39,7 @@
         [ChildActionOnly]
         public override ActionResult RenderForm(CheckoutConfirmationForm model)
         {
-            return this.PartialView(this.GetPartialPath("PurchaseOrderPaymentMethodForm"), model);
+            return this.PartialView(this.GetPartialPath("DebitOrderPaymentMethodForm"), model);
         }
 
         protected override IPaymentResult PerformProcessPayment(SalePreparationBase preparation, IPaymentMethod paymentMethod)
@@ -50,9 +50,9 @@
             // BazaarPaymentMethodFormControllerBase would be a good example.
 
             var form = UmbracoContext.HttpContext.Request.Form;
-            var purchaseOrderNumber = form.Get("purchaseOrderNumber");
+            var DebitOrderNumber = form.Get("DebitOrderNumber");
 
-            if (string.IsNullOrEmpty(purchaseOrderNumber))
+            if (string.IsNullOrEmpty(DebitOrderNumber))
             {
                 var invalidData = new InvalidDataException("The Purchase Order Number cannot be an empty string");
                 return new PaymentResult(Attempt<IPayment>.Fail(invalidData), null, false);
@@ -61,7 +61,7 @@
             // You need a ProcessorArgumentCollection for this transaction to store the payment method nonce
             // The braintree package includes an extension method off of the ProcessorArgumentCollection - SetPaymentMethodNonce([nonce]);
             var args = new ProcessorArgumentCollection();
-            args.SetPurchaseOrderNumber(purchaseOrderNumber);
+            args.SetDebitOrderNumber(DebitOrderNumber);
 
             // We will want this to be an Authorize(paymentMethod.Key, args);
             // -- Also in a real world situation you would want to validate the PO number somehow.
