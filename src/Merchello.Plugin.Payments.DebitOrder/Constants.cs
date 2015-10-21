@@ -1,4 +1,4 @@
-﻿namespace Merchello.Plugin.Payments.PurchaseOrder
+﻿namespace Merchello.Plugin.Payments.DebitOrder
 {
     using System.Diagnostics.CodeAnalysis;
 
@@ -16,17 +16,17 @@
             /// <summary>
             /// The processor settings.
             /// </summary>
-            public static string ProcessorSettings = "purchaseOrderProcessorSettings";
+            public static string ProcessorSettings = "DebitOrderProcessorSettings";
 
             /// <summary>
             /// The purchase order number prefix.
             /// </summary>
-            public static string PurchaseOrderNumber = "purchaseOrderNumber"; 
+            public static string DebitOrderNumber = "DebitOrderNumber"; 
 
             /// <summary>
             /// The purchase order number prefix.
             /// </summary>
-            public static string PurchaseOrderNumberPrefix = "purchaseOrderNumberPrefix";
+            public static string DebitOrderNumberPrefix = "DebitOrderNumberPrefix";
 
             /// <summary>
             /// The authorization result.
@@ -36,7 +36,7 @@
             /// <summary>
             /// The capture transaction result.
             /// </summary>
-            public static string CaptureTransactionResult = "purchaseOrderCaptureTransactionResult";
+            public static string CaptureTransactionResult = "DebitOrderCaptureTransactionResult";
         }
     }
 }

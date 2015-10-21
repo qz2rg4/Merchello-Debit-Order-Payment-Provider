@@ -1,4 +1,4 @@
-﻿namespace Merchello.Plugin.Payments.PurchaseOrder
+﻿namespace Merchello.Plugin.Payments.DebitOrder
 {
     /// <summary>
     /// Indicates what sort of transaction should be processed

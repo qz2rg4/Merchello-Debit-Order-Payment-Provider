@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Merchello.Plugin.Payments.PurchaseOrder")]
+[assembly: AssemblyTitle("Merchello.Plugin.Payments.DebitOrder")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Merchello.Plugin.Payments.PurchaseOrder")]
+[assembly: AssemblyProduct("Merchello.Plugin.Payments.DebitOrder")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

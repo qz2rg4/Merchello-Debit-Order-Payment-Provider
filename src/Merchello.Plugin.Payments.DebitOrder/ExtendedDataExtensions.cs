@@ -1,7 +1,7 @@
-﻿namespace Merchello.Plugin.Payments.PurchaseOrder
+﻿namespace Merchello.Plugin.Payments.DebitOrder
 {
     using Merchello.Core.Models;
-    using Merchello.Plugin.Payments.PurchaseOrder.Models;
+    using Merchello.Plugin.Payments.DebitOrder.Models;
 
     using Newtonsoft.Json;
 
@@ -14,8 +14,8 @@
         /// Saves the processor settings to an extended data collection
         /// </summary>
         /// <param name="extendedData">The <see cref="ExtendedDataCollection"/></param>
-        /// <param name="processorSettings">The <see cref="PurchaseOrderProcessorSettings"/> to be serialized and saved</param>
-        public static void SaveProcessorSettings(this ExtendedDataCollection extendedData, PurchaseOrderProcessorSettings processorSettings)
+        /// <param name="processorSettings">The <see cref="DebitOrderProcessorSettings"/> to be serialized and saved</param>
+        public static void SaveProcessorSettings(this ExtendedDataCollection extendedData, DebitOrderProcessorSettings processorSettings)
         {
             var settingsJson = JsonConvert.SerializeObject(processorSettings);
 
@@ -26,13 +26,13 @@
         /// Get teh processor settings from the extended data collection
         /// </summary>
         /// <param name="extendedData">The <see cref="ExtendedDataCollection"/></param>
-        /// <returns>The deserialized <see cref="PurchaseOrderProcessorSettings"/></returns>
-        public static PurchaseOrderProcessorSettings GetProcessorSettings(this ExtendedDataCollection extendedData)
+        /// <returns>The deserialized <see cref="DebitOrderProcessorSettings"/></returns>
+        public static DebitOrderProcessorSettings GetProcessorSettings(this ExtendedDataCollection extendedData)
         {
-            if (!extendedData.ContainsKey(Constants.ExtendedDataKeys.ProcessorSettings)) return new PurchaseOrderProcessorSettings();
+            if (!extendedData.ContainsKey(Constants.ExtendedDataKeys.ProcessorSettings)) return new DebitOrderProcessorSettings();
 
             return
-                JsonConvert.DeserializeObject<PurchaseOrderProcessorSettings>(
+                JsonConvert.DeserializeObject<DebitOrderProcessorSettings>(
                     extendedData.GetValue(Constants.ExtendedDataKeys.ProcessorSettings));
         }
     }

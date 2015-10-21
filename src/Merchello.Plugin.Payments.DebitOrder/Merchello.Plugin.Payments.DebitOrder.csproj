@@ -216,16 +216,16 @@
     <Compile Include="TransactionMode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\Merchello.PurchaseOrder\payment.purchaseorder.models.js" />
-    <Content Include="App_Plugins\Merchello.PurchaseOrder\payment.purchaseorder.providersettings.html" />
-    <Content Include="App_Plugins\Merchello.PurchaseOrder\payment.purchaseorder.providersettings.controller.js" />
-    <Content Include="App_Plugins\Merchello.PurchaseOrder\payment.purchaseorder.paymentmethoddialog.controller.js" />
-    <Content Include="App_Plugins\Merchello.PurchaseOrder\payment.purchaseorder.module.js" />
-    <Content Include="App_Plugins\Merchello.PurchaseOrder\payment.purchaseorder.paymentmethoddialog.html" />
+    <Content Include="App_Plugins\Merchello.DebitOrder\payment.debiteorder.models.js" />
+    <Content Include="App_Plugins\Merchello.DebitOrder\payment.purchaseorder.providersettings.html" />
+    <Content Include="App_Plugins\Merchello.DebitOrder\payment.purchaseorder.providersettings.controller.js" />
+    <Content Include="App_Plugins\Merchello.DebitOrder\payment.purchaseorder.paymentmethoddialog.controller.js" />
+    <Content Include="App_Plugins\Merchello.DebitOrder\payment.debitorder.module.js" />
+    <Content Include="App_Plugins\Merchello.DebitOrder\payment.purchaseorder.paymentmethoddialog.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Plugins\Merchello.PurchaseOrder\package.manifest" />
+    <None Include="App_Plugins\Merchello.DebitOrder\package.manifest" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

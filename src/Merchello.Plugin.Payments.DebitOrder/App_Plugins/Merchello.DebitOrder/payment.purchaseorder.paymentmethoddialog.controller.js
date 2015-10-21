@@ -6,7 +6,7 @@
  * @description
  * The controller for the adding / editing payment methods on the Payment page
  */
-angular.module('merchello.plugins.purchaseorder').controller('Merchello.Plugin.GatewayProviders.Payments.Dialogs.PurchaseOrderPaymentMethodController',
+angular.module('merchello.plugins.DebitOrder').controller('Merchello.Plugin.GatewayProviders.Payments.Dialogs.DebitOrderPaymentMethodController',
     ['$scope',
         function ($scope) {
 
